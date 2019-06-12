@@ -1,1 +1,1 @@
-# epicMail-react-version
+# EPIC Mail (React Version)
