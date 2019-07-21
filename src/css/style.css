@@ -19,6 +19,12 @@ body,
   width: 100%;
 }
 
+.link-group {
+  margin-bottom: 40px;
+  margin-top: 0px;
+  top: 0;
+}
+
 header {
   /* background-image: url(".././img/login4.jpg"); */
   background-color: teal;
