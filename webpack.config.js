@@ -1,4 +1,5 @@
 const path = require('path');
+require('@babel/polyfill');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -16,6 +17,9 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/react', '@babel/env'],
+            plugins: [
+              '@babel/plugin-transform-runtime',
+            ],
           },
         },
       },
