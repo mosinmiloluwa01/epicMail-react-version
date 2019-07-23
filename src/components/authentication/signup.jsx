@@ -90,7 +90,7 @@ class Signup extends Component {
                   <InputField
                     key={i}
                     onFocus={e => this.clearFocus(e.target.name)}
-                    type="text"
+                    type={this.state.form[el] === 'password' ? 'password' : 'text'}
                     labelName={camelSplit(el)}
                     className="form-input"
                     placeholder={`Enter ${camelSplit(el)}`}
