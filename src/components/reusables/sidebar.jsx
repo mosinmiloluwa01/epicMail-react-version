@@ -9,7 +9,7 @@ class HeaderComponent extends Component {
     render() {
       return (
               <div className='rsidebar' id='responsive-sidebar'>
-                <Link to='javascript:void(0)' className='rclosebtn' onClick='closeNav()'>x</Link>
+                <Link to='javascript:void(0)' className='rclosebtn'>x</Link>
                 <Link to='/compose' className='sidebarlink'><i className='fa fa-plus sidebaricons'></i>Compose</Link>
                 <Link to='/compose' className='sidebarlink active'><i className='fa fa-inbox sidebaricons'></i>Inbox</Link>
                 <Link to='/compose' className='sidebarlink'><i className='fa fa-paper-plane sidebaricons'></i>Sent</Link>

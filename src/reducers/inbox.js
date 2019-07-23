@@ -1,7 +1,7 @@
-import { LOGIN_SUCCESS, LOGIN_ERROR, GET_CURRENT_USER } from '../actions/types';
+import { INBOX_SUCCESS, INBOX_ERROR, GET_CURRENT_USER } from '../actions/types';
 
 const initialState = {
-  body: {},
+  body: [],
   isAuthenticated: !!localStorage.getItem('jwtAuth'),
   error: {},
   isLoading: false,
@@ -9,13 +9,13 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case INBOX_SUCCESS:
       return {
         ...state,
         body: action.payload,
         isLoading: false,
       };
-    case LOGIN_ERROR:
+    case INBOX_ERROR:
       return {
         ...state,
         error: action.payload,

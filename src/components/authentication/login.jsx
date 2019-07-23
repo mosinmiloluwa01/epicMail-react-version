@@ -84,7 +84,7 @@ class Login extends Component {
             <InputField
               key={i}
               onFocus={e => this.clearFocus(e.target.name)}
-              type="text"
+              type={el === 'password' ? 'password' : 'text'}
               labelName={camelSplit(el)}
               className="form-input"
               placeholder={`Enter ${camelSplit(el)}`}

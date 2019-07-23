@@ -10,7 +10,7 @@ const fetchLogin = (user, history) => (dispatch) => {
   axios
     .post('https://mosinmiloluwa-app.herokuapp.com/api/v2/auth/login', user)
     .then((res) => {
-      localStorage.setItem('jwtAuth', res.data.token);
+      localStorage.setItem('jwtAuth', res.data.data.token);
       history.push('/inbox');
       dispatch(getCurrentUser(res.data));
       dispatch({
