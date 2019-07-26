@@ -93,6 +93,7 @@ class Signup extends Component {
                     type={this.state.form[el] === 'password' ? 'password' : 'text'}
                     labelName={camelSplit(el)}
                     className="form-input"
+                    divClassName="form-field1"
                     placeholder={`Enter ${camelSplit(el)}`}
                     name={el}
                     value={this.state.form[el]}

@@ -37,6 +37,12 @@ header {
   margin-left: -1rem;
 }
 
+.server-error-message {
+  color: rgb(212, 113, 113);
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
 header div.nav {
   display: flex;
   align-items: baseline;
@@ -531,9 +537,9 @@ input[type="submit"] {
 }
 
 .col-75 {
-  float: left;
+  /* float: left; */
   width: 75%;
-  margin-top: 6px;
+  /* margin-top: 6px; */
 }
 
 .row:after {
