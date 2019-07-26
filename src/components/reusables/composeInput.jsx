@@ -2,27 +2,21 @@ import React from 'react';
 import Proptype from 'prop-types';
 import '../../css/style.css';
 
-const inputField = ({
+const ComposeInput = ({
   type,
   placeholder,
   name,
   value,
   onChange,
-  className,
   error,
-  labelName,
   onFocus,
   divClassName,
 }) => (
   <>
-    <div className='label'>
-      <p>{labelName}</p>
-    </div>
     <div className={divClassName}>
       <input
         type={type}
         placeholder={placeholder}
-        className={className}
         name={name}
         value={value}
         onChange={onChange}
@@ -34,17 +28,16 @@ const inputField = ({
   </>
 );
 
-inputField.propTypes = {
+ComposeInput.propTypes = {
   type: Proptype.string.isRequired,
   placeholder: Proptype.string,
   name: Proptype.string,
   value: Proptype.string.isRequired,
   onChange: Proptype.func,
-  className: Proptype.string.isRequired,
   error: Proptype.string,
   labelName: Proptype.string,
   onFocus: Proptype.func,
   divClassName: Proptype.string,
 };
 
-export default inputField;
+export default ComposeInput;
