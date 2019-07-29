@@ -4,15 +4,24 @@ import { connect } from 'react-redux';
 import Proptype from 'prop-types';
 import PageLayout from '../layout/PageLayout.jsx';
 import getInbox from '../../actions/inbox';
+import readAMail from '../../actions/readAMail';
 import MailContainer from '../reusables/MailContainer.jsx';
 import MailContent from '../reusables/MailContent.jsx';
 
 import '../../css/style.css';
 
 class Inbox extends Component {
+  state = {
+    isToggled: false,
+  };
+
   componentDidMount() {
     this.props.getInbox();
   }
+
+  onclick = (id) => {
+    this.props.readAMail(id, this.props.history);
+  };
 
   render() {
     const { inbox } = this.props;
@@ -22,9 +31,11 @@ class Inbox extends Component {
           <MailContainer title={'Inbox'}>
             {inbox.map(mail => (
               <MailContent
-              key={mail.id}
-              sender={`${mail.first_name}  ${mail.last_name}`}
-              message={mail.message}
+                key={mail.id}
+                id={mail.id}
+                sender={`${mail.first_name}  ${mail.last_name}`}
+                message={mail.message}
+                onClick={() => this.onclick(mail.id)}
               />
             ))}
           </MailContainer>
@@ -37,13 +48,16 @@ class Inbox extends Component {
 Inbox.propTypes = {
   getInbox: Proptype.func,
   inbox: Proptype.array,
+  readAMail: Proptype.func,
+  history: Proptype.object,
 };
 
 const mapStateToProps = state => ({
   inbox: state.inbox.body,
+  readAMail: state.readAMail.body,
 });
 
 export default connect(
   mapStateToProps,
-  { getInbox },
+  { getInbox, readAMail },
 )(withRouter(Inbox));

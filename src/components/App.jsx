@@ -7,6 +7,7 @@ import Login from './authentication/login.jsx';
 import Inbox from './pages/inbox.jsx';
 import NotFound from './pages/NotFound.jsx';
 import ComposeMail from './pages/compose.jsx';
+import Message from './pages/message.jsx';
 
 const App = () => (
   <Provider store={store}>
@@ -16,6 +17,7 @@ const App = () => (
         <Route path="/signup" component={Signup} />
         <Route path="/inbox" component={Inbox} />
         <Route path="/compose" component={ComposeMail} />
+        <Route path="/message" component={Message} />
         <Route component={NotFound} />
       </Switch>
     </Router>
