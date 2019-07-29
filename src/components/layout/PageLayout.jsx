@@ -7,9 +7,9 @@ const PageLayout = props => (
   <Fragment>
     <div className="pageContainer">
       <Header />
-      <div className='page-content'>
-      <Sidebar />
-      {props.children}
+      <div className="page-content">
+        <Sidebar />
+        {props.children}
       </div>
     </div>
   </Fragment>

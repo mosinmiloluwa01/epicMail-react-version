@@ -171,6 +171,13 @@ div.content {
   border: none;
 }
 
+.rsidebar.open {
+  display: block;
+}
+.content.open {
+  left: 300px;
+}
+
 #main {
   transition: margin-left 0.5s;
   padding: 16px;
@@ -527,9 +534,6 @@ input[type="submit"] {
   margin-bottom: 1rem;
 }
 
-/* Style the container */
-
-/* Floating column for labels: 25% width */
 .col-25 {
   float: left;
   width: 25%;
@@ -537,9 +541,7 @@ input[type="submit"] {
 }
 
 .col-75 {
-  /* float: left; */
   width: 75%;
-  /* margin-top: 6px; */
 }
 
 .row:after {
@@ -554,45 +556,6 @@ input[type="submit"] {
 .margin-bottom {
   margin-bottom: 0.3rem;
 }
-
-/* @media screen and (max-width: 360px) {
-  header a.epic-title {
-    font-size: 1.2rem;
-  }
-  header a.navlink {
-    margin: 10px 5px;
-    padding: 4px 10px;
-  }
-  h1{
-    font-size: 20px;
-  }
-  .rsidebar a.sidebarlink {
-    font-size: 1rem;
-  }
-
-  .rsidebar i.sidebaricons{
-    font-size: 1rem;
-    margin-right: 0.3rem;
-  }
-  .rsidebar a {
-    text-align: left;
-    padding: 0 0 0 0.2rem;
-    font-size: 0.1rem;
-    display: inline-block;
-  }
-
-  .column1 {
-    flex-direction: column;
-    height: 4.375rem;
-  } 
-  .column11 {
-    flex-direction: column;
-    height: 4.375rem;
-  } 
-  .sender-column {
-    width: 100%;
-  }
-} */
 
 @media screen and (max-width: 450px) {
   header a.epic-title {
@@ -663,6 +626,7 @@ input[type="submit"] {
 @media screen and (max-width: 600px) {
   .rsidebar {
     display: none;
+    width: 10rem;
   }
   div.content-inner .ropenbtn {
     display: block;
@@ -689,129 +653,3 @@ input[type="submit"] {
     align-self: flex-end;
   }
 }
-/* 
-@media screen and (max-width: 370px) {
-  .rsidebar {padding-top: 15px; width: 0;}
-  .rsidebar a {font-size: 18px;}
-  .content-inner {margin-left: 0;}
-}
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: left;
-    float: none;
-    padding: 0 0 0 0.4rem;
-    font-size: 0.8rem;
-    display: inline-block;
-  }
-  .column1 {
-    flex-direction: column;
-    height: 4.375rem;
-  } 
-  .column11 {
-    flex-direction: column;
-    height: 4.375rem;
-  } 
-  .sender-column {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .column{
-    min-width: 15.5rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .modal-content{
-    min-width: 15.5rem;
-  }
-}
-
-@media screen and (max-width: 411px) {
-  .sidebar a {
-    text-align: left;
-    float: none;
-    padding: 0 0 0 0.2rem;
-    font-size: 0.8rem;
-    display: inline-block;
-  }
-  .column1 {
-    flex-direction: column;
-    height: 4.375rem;
-  } 
-  .column11 {
-    flex-direction: column;
-    height: 4.375rem;
-  } 
-  .sender-column {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  .sidebar a {
-    text-align: left;
-    float: none;
-    padding: 0 0.07rem 0.1rem 0.29rem;
-    font-size: 1rem;
-    display: inline-block;
-  }
-  .column1 {
-    flex-direction: column;
-    height: 4.375rem;
-  } 
-  .column11 {
-    flex-direction: column;
-    height: 4.375rem;
-  } 
-  .sender-column {
-    width: 100%;
-  }
-}
-
-@media screen and (max-height: 450px) {
-  .profilenav {padding-top: 15px;}
-  .profilenav a {font-size: 18px;}
-}
-
-@media screen and (max-width: 450px) {
-  .rsidebar {padding-top: 15px; width: 0;}
-  .rsidebar a {font-size: 18px;}
-  .content-inner {margin-left: 0;}
-}
-
-@media screen and (max-width: 600px) {
-  .col-25, .col-75 {
-    width: 100%;
-    margin-top: 0;
-  }
-}
-@media screen and (max-width: 600px) {
-  input[type=submit] {
-    width: 5rem;
-    margin-top: 0;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left; text-align: left;}
-  div.content {margin-left: 0;}
-}
-
-@media screen and (max-width: 700px) {
-	.column{
-		min-width: 12.5rem;
-	}
-}
-@media screen and (max-width: 700px) {
-  .modal-content{
-    min-width: 12.5rem;
-	}
-} */

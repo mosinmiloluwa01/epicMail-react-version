@@ -32,7 +32,6 @@ class ComposeMail extends Component {
     let formIsValid = false;
 
     try {
-      console.log('this.state.form', this.state.form);
       await schema.validate(this.state.form, { abortEarly: false });
       formIsValid = true;
     } catch (err) {
