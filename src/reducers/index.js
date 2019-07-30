@@ -5,6 +5,8 @@ import inbox from './inbox';
 import compose from './compose';
 import readAMail from './readAMail';
 import toggleSidebar from './toggleSidebar';
+import sentMails from './sentMails';
+import readASentMail from './readASentMail';
 
 export default combineReducers({
   signup,
@@ -13,4 +15,6 @@ export default combineReducers({
   compose,
   readAMail,
   toggleSidebar,
+  sentMails,
+  readASentMail,
 });

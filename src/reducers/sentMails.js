@@ -1,4 +1,4 @@
-import { INBOX_SUCCESS, INBOX_ERROR } from '../actions/types';
+import { SENT_MAILS_SUCCESS, SENT_MAILS_ERROR } from '../actions/types';
 
 const initialState = {
   body: [],
@@ -8,13 +8,13 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case INBOX_SUCCESS:
+    case SENT_MAILS_SUCCESS:
       return {
         ...state,
         body: action.payload,
         isLoading: false,
       };
-    case INBOX_ERROR:
+    case SENT_MAILS_ERROR:
       return {
         ...state,
         error: action.payload,

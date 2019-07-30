@@ -8,6 +8,8 @@ import Inbox from './pages/inbox.jsx';
 import NotFound from './pages/NotFound.jsx';
 import ComposeMail from './pages/compose.jsx';
 import Message from './pages/message.jsx';
+import SentMails from './pages/sentMails.jsx';
+import SentMail from './pages/sentMessage.jsx';
 
 const App = () => (
   <Provider store={store}>
@@ -18,6 +20,8 @@ const App = () => (
         <Route path="/inbox" component={Inbox} />
         <Route path="/compose" component={ComposeMail} />
         <Route path="/message" component={Message} />
+        <Route path="/sent" component={SentMails} />
+        <Route path="/sent-message" component={SentMail} />
         <Route component={NotFound} />
       </Switch>
     </Router>

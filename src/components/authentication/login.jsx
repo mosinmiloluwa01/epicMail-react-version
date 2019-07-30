@@ -80,6 +80,7 @@ class Login extends Component {
     return (
       <AuthFormContainer title={ 'EPIC Mail Login' }>
         <form className="form form-login" onSubmit={this.onSubmit}>
+        <div className="server-error-message">{this.props.LoginError.message}</div>
           {Object.keys(this.state.form).map((el, i) => (
             <InputField
               key={i}

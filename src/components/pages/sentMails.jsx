@@ -3,34 +3,33 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Proptype from 'prop-types';
 import PageLayout from '../layout/PageLayout.jsx';
-import getInbox from '../../actions/inbox';
-import readAMail from '../../actions/readAMail';
+import getSentMails from '../../actions/sentMails';
+import readASentMail from '../../actions/readASentMail';
 import MailContainer from '../reusables/MailContainer.jsx';
 import MailContent from '../reusables/MailContent.jsx';
 
 import '../../css/style.css';
 
-class Inbox extends Component {
+class SentMails extends Component {
   state = {
     isToggled: false,
   };
 
   componentDidMount() {
-    this.props.getInbox();
+    this.props.getSentMails();
   }
 
   onclick = (id) => {
-    console.log(id);
-    this.props.readAMail(id, this.props.history);
+    this.props.readASentMail(id, this.props.history);
   };
 
   render() {
-    const { inbox } = this.props;
+    const { sentMails } = this.props;
     return (
       <Fragment>
         <PageLayout>
-          <MailContainer title={'Inbox'}>
-            {inbox.map(mail => (
+          <MailContainer title={'Sent Mails'}>
+            {sentMails.map(mail => (
               <MailContent
                 key={mail.id}
                 id={mail.id}
@@ -46,19 +45,19 @@ class Inbox extends Component {
   }
 }
 
-Inbox.propTypes = {
-  getInbox: Proptype.func,
-  inbox: Proptype.array,
-  readAMail: Proptype.func,
+SentMails.propTypes = {
+  getSentMails: Proptype.func,
+  sentMails: Proptype.array,
+  readASentMail: Proptype.func,
   history: Proptype.object,
 };
 
 const mapStateToProps = state => ({
-  inbox: state.inbox.body,
-  readAMail: state.readAMail.body,
+  sentMails: state.sentMails.body,
+  readASentMail: state.readASentMail.body,
 });
 
 export default connect(
   mapStateToProps,
-  { getInbox, readAMail },
-)(withRouter(Inbox));
+  { getSentMails, readASentMail },
+)(withRouter(SentMails));
