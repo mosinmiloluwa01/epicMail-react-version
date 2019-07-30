@@ -20,7 +20,6 @@ class Inbox extends Component {
   }
 
   onclick = (id) => {
-    console.log(id);
     this.props.readAMail(id, this.props.history);
   };
 
