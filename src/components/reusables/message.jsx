@@ -10,7 +10,7 @@ const Message = ({ date, email, message }) => (
     </div>
     <div className="row">
       <div className="col-75">
-        <p className="from-color font-style">from: {email}</p>
+        <p className="from-color font-style"> {email}</p>
       </div>
     </div>
     <div className="mailcontent-inner">

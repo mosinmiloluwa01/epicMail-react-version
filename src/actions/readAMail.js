@@ -2,12 +2,14 @@ import axios from 'axios';
 import { READ_A_MAIL_SUCCESS, READ_A_MAIL_ERROR } from './types';
 
 const getAMail = (id, history) => async (dispatch) => {
+  console.log('id===>>>', id);
   const token = localStorage.getItem('jwtAuth');
   await axios
     .get(`https://mosinmiloluwa-app.herokuapp.com/api/v2/messages/${id}`, {
       headers: { Authorization: token },
     })
     .then((res) => {
+      console.log(res.data.data);
       history.push('/message');
       dispatch({
         type: READ_A_MAIL_SUCCESS,
