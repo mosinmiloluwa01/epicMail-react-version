@@ -77,6 +77,7 @@ class Login extends Component {
   };
 
   render() {
+    localStorage.clear();
     return (
       <AuthFormContainer title={ 'EPIC Mail Login' }>
         <form className="form form-login" onSubmit={this.onSubmit}>

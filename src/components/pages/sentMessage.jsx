@@ -9,7 +9,11 @@ import PageLayout from '../layout/PageLayout.jsx';
 
 class SentMessage extends Component {
   render() {
-    const { readASentMail } = this.props;
+    const { readASentMail, history } = this.props;
+
+    if (!localStorage.getItem('jwtAuth')) {
+      history.push('/');
+    }
 
     const date = new Date(readASentMail.created_on).toUTCString();
     return (
@@ -24,6 +28,7 @@ class SentMessage extends Component {
 
 SentMessage.propTypes = {
   readASentMail: Proptype.object,
+  history: Proptype.object,
 };
 
 const mapStateToProps = state => ({

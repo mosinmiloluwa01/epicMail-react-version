@@ -9,8 +9,11 @@ import PageLayout from '../layout/PageLayout.jsx';
 
 class Message extends Component {
   render() {
-    const { readAMail } = this.props;
+    const { readAMail, history } = this.props;
 
+    if (!localStorage.getItem('jwtAuth')) {
+      history.push('/');
+    }
     const date = new Date(readAMail.created_on).toUTCString();
     return (
       <PageLayout>
@@ -24,6 +27,7 @@ class Message extends Component {
 
 Message.propTypes = {
   readAMail: Proptype.object,
+  history: Proptype.object,
 };
 
 const mapStateToProps = state => ({
