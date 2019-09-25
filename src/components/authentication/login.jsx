@@ -26,6 +26,7 @@ const schema = yup.object().shape({
 class Login extends Component {
   state = {
     form: { email: '', password: '' },
+    isLoading: false,
   };
 
   onChange = (event) => {
@@ -72,9 +73,13 @@ class Login extends Component {
     const validationError = await this.checkValidation();
 
     if (validationError) {
-      this.props.fetchLogin(obj, this.props.history);
+      this.props.fetchLogin(obj, this.props.history, this.resetIsLoadingState);
     }
   };
+
+  resetIsLoadingState = () => {
+    this.setState(prevState => ({ isLoading: !prevState.isLoading }));
+  }
 
   render() {
     localStorage.clear();
@@ -97,7 +102,7 @@ class Login extends Component {
               error={this.state.errors && this.state.errors[el]}
             />
           ))}
-          <InputField type="submit" className="form-button" value="sign in" />
+          <InputField type="submit" className="form-button" value={this.state.isLoading === true ? 'Loading...' : 'sign in' } />
           <AuthLinks>
             <Link to="/signup">Create An Account</Link>
           </AuthLinks>
@@ -110,6 +115,7 @@ Login.propTypes = {
   fetchLogin: Proptype.func.isRequired,
   history: Proptype.object,
   LoginError: Proptype.object,
+  isLoading: Proptype.bool,
 };
 
 const mapStateToProps = state => ({

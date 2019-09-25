@@ -13,7 +13,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         body: action.payload,
-        isLoading: false,
+        isLoading: action.isLoading,
         isLoggedIn: true,
       };
     case LOGIN_ERROR:
