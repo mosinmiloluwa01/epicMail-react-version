@@ -71,6 +71,9 @@ class ComposeMail extends Component {
   };
 
   render() {
+    if (!localStorage.getItem('jwtAuth')) {
+      this.props.history.push('/');
+    }
     return (
       <Fragment>
         <PageLayout>

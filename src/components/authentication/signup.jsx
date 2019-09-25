@@ -83,6 +83,7 @@ class Signup extends Component {
   };
 
   render() {
+    localStorage.clear();
     return (
       <AuthFormContainer title={ 'EPIC Mail SignUp' }>
               <form className="form form-login" onSubmit={this.onSubmit}>
@@ -91,7 +92,7 @@ class Signup extends Component {
                   <InputField
                     key={i}
                     onFocus={e => this.clearFocus(e.target.name)}
-                    type={this.state.form[el] === 'password' ? 'password' : 'text'}
+                    type={el === 'password' ? 'password' : 'text'}
                     labelName={camelSplit(el)}
                     className="form-input"
                     divClassName="form-field1"

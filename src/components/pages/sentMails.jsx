@@ -24,7 +24,10 @@ class SentMails extends Component {
   };
 
   render() {
-    const { sentMails } = this.props;
+    const { sentMails, history } = this.props;
+    if (!localStorage.getItem('jwtAuth')) {
+      history.push('/');
+    }
     return (
       <Fragment>
         <PageLayout>

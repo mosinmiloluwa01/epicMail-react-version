@@ -14,6 +14,7 @@ export default function (state = initialState, action) {
         ...state,
         body: action.payload,
         isLoading: false,
+        isLoggedIn: true,
       };
     case LOGIN_ERROR:
       return {

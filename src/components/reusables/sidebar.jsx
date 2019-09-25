@@ -7,8 +7,6 @@ import { bindActionCreators } from 'redux';
 import toggle from '../../actions/toggle';
 
 const Sidebar = ({ toggleSidebar, setToggle }) => {
-  // const [isToggled, setIsToggled] = useState(toggle);
-
   const handleClick = () => {
     setToggle(!toggleSidebar);
   };
@@ -21,7 +19,7 @@ const Sidebar = ({ toggleSidebar, setToggle }) => {
         <i className="fa fa-plus sidebaricons" />
         Compose
       </Link>
-      <Link to="/inbox" className="sidebarlink active">
+      <Link to="/inbox" className="sidebarlink">
         <i className="fa fa-inbox sidebaricons" />
         Inbox
       </Link>

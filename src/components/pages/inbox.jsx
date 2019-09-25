@@ -24,7 +24,10 @@ class Inbox extends Component {
   };
 
   render() {
-    const { inbox } = this.props;
+    const { inbox, history } = this.props;
+    if (!localStorage.getItem('jwtAuth')) {
+      history.push('/');
+    }
     return (
       <Fragment>
         <PageLayout>
